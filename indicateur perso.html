@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Requêtes</title>
+        <link rel="stylesheet" href="CSS/indicateurs perso.css">
+    </head>
+    <body>
+        <section class="navbar">
+             <h1>Nos requêtes/indicateurs personnels</h1>
+        </section>
+        <br>
+        <p>Requête/indicateur personnel de Lisa : </p>
+            <p>Afficher les totaux de ventes (en quantité) par catégorie, classés du plus vendu au moins vendu</p>
+        <p>Ca permet à KDou d'optimiser son offre commerciale en identifiant les catégories les plus vendues 
+            (comme les Boissons et Produits laitiers) et celles qui le sont le moins. Cela aide à réduire le gaspillage,
+             à rationaliser le stockage et à privilégier des réapprovisionnements écoresponsables sur les meilleures ventes.
+        </p>
+        <section>
+            <div>SELECT DISTINCT Categorie.NomCateg, SUM(DetailCommande.Quantité) AS TotalVendu</div>
+            <div>FROM (Categorie INNER JOIN Produit ON Categorie.CodeCateg = Produit.CodeCateg)</div>
+            <div>INNER JOIN DetailCommande ON Produit.RefProd = DetailCommande.[Réf produit]</div>
+            <div>GROUP BY Categorie.NomCateg</div>
+            <div>ORDER BY SUM(DetailCommande.Quantité) DESC;</div>
+        </section>
+        <br>
+        <img src="IMG/reqindicateurLisa.png" alt="Capture d'écran de Access de la requête de Lisa">
+        
+        <br>
+        <br>
+        <p>Requête/indicateur personnel de Dwiti : </p>
+        <section>
+        </section>
+        <br>
+        <br>
+        <p>Requête/indicateur personnel de Naëlla : </p>
+        <p>Afficher la liste des produits d'épicerie fine dont le coût d'achat est supérieur à 50 €, 
+            avec leur nom et leur coût d'achat, du plus cher au moins cher</p>
+        <p>Intérêt de Kdou: Permet d'identifier les articles à forte valeur marchande pour cibler une clientèle premium, 
+            ajuster la marge commerciale ou surveiller les coûts d'approvisionnement.</p>
+        <section>
+            <div>SELECT NomProd, CoutAchat</div>
+            <div>FROM Produit </div>
+            <div>WHERE CoutAchat > 50 </div>
+            <div>ORDER BY CoutAchat DESC;</div>
+        </section>
+        <img src="IMG/reqindicateurNaella.png" alt="Capture d'écran de Access de la requête de Naêlla">
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer>
+            <a href="index.html"style="color:white;">Retour à l'accueil</a>
+        </footer>
+
+    </body>
+</html>

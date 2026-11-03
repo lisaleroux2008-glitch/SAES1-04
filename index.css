@@ -1,0 +1,118 @@
+body{
+    background-color: rgb(11, 48, 74);
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif; 
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #051923;
+}
+
+.navbar .logo {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style des liens transformés en boutons */
+.navbar .nav-links .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #006494; /* Couleur du bouton */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;        /* Arrondit les angles */
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Effet au survol de la souris */
+.navbar .nav-links .btn:hover {
+    background-color: #00a6fb; /* Changement de couleur au survol */
+    transform: translateY(-2px);
+}
+
+.navbar{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+    background-color: #0a2432;
+    padding: 15px 30px;
+}
+
+.logo{
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: bold;
+}
+div{
+    font-size: 20px;
+}
+p{
+    font-size: 20px;
+    color: white;
+    margin: 10px;
+}
+h1{
+    font-size: 45px;
+    margin: 10px;
+}
+#titre div, p{
+    font-size: 25px;
+}
+
+.Titre1{
+    font-size: 35px;
+    color: white;
+    margin: 15px;
+}
+div{
+    color: white;
+    margin: 10px;
+}
+#presentation li {
+    font-size: 25px;
+
+}
+.Titre2{
+    font-size: 35px;
+    color: white;
+    margin: 15px;
+}
+#requetes li {
+    font-size: 25px;
+
+}
+.Titre3{
+    font-size: 35px;
+    color: white;
+    margin: 15px;
+}
+#bilan li {
+    font-size: 25px;
+
+}
+.Titre4{
+    font-size: 35px;
+    color: white;
+    margin: 15px;
+}
+h2 {
+    text-decoration: underline;
+}
+footer {
+    margin: 10px; /* Pousse automatiquement le footer tout en bas de la page */
+    padding: 10px;    /* Ajoute un peu d'espace autour du lien "Retour à l'accueil" */
+}
+
+

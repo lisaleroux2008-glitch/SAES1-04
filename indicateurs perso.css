@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(11, 48, 74);
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif; 
+   
+    
+   
+}
+.navbar{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+    background-color: #0a2432;
+    padding: 15px 30px;
+}
+h1{
+    color: white;
+    margin: 10px;
+}
+p{
+    margin: 20px;
+    font-size: 25px;
+    color: white;
+}
+section {
+    font-family: Arial, Helvetica, sans-serif;   
+    display: inline-block;
+    border: 9px black;
+    padding: 15px;            /* Ajoute de l'espace entre le texte et le cadre */
+    border-radius: 6px;       /* Arrondit légèrement les coins du cadre */
+    background-color: #0a2238; /* (Optionnel) Une couleur de fond pour faire ressortir le cadre */
+    margin: 10px 0; 
+    margin: 9px;
+    color: white;
+}
+
+img {
+    display: block; /* Garde l'image en dessous du texte */
+    position: relative;
+    margin: 15px;
+}
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 20px;
+    margin: 15px; /* Pousse automatiquement le footer tout en bas de la page */
+}

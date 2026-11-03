@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Requêtes</title>
+        <link rel="stylesheet" href="CSS/requetes.css">
+    </head>
+    <body>
+        <section class="navbar">
+             <h1>Nos Requêtes SQL</h1>
+        </section>
+
+        <p>Nous devions traiter les requêtes/indicateurs suivants : </p>
+        <br>
+        <div class="Question1">Requête 2: Dans une réflexion en lien avec l’origine de ses produits : On veut comme indicateur le CA
+            total généré à ce jour avec les fournisseurs de l’UE ?
+        </div>
+        <br>
+        <section>
+            <div>SELECT SUM(DetailCommande.Quantité * Produit.CoutAchat) AS CA_Total</div>
+            <div>FROM ((Fournisseur INNER JOIN Pays ON Fournisseur.NoPays = Pays.NoPays)</div>
+            <div>INNER JOIN Produit ON Fournisseur.NoFour = Produit.NoFour)</div>
+            <div>INNER JOIN DetailCommande ON Produit.RefProd = DetailCommande.[Réf Produit]</div>
+            <div>WHERE Pays.UE  = 'Membre';</div>
+        </section>
+        <br>
+        <img src="IMG/requete2.png" alt="Capture d'écran de Access de la requête 2">
+        <br>       
+        <div class="Question1">Requête 3: Dans une réflexion en lien avec la santé : On veut comme indicateur le chiffre d’affaire
+            généré (montant total des ventes) annuel pour les catégories desserts ou boissons.
+        </div>
+        <section>
+            <div>SELECT YEAR(DateCde) AS Annee, Categorie.NomCateg, SUM(DetailCommande.Quantité * Produit.CoutAchat) AS CA</div>
+            <div>FROM ((Categorie INNER JOIN Produit ON Categorie.CodeCateg = Produit.CodeCateg)</div>
+            <div>INNER JOIN DetailCommande ON DetailCommande.[Réf Produit] = Produit.RefProd)</div>
+            <div>INNER JOIN Commande ON Commande.[N° commande] = DetailCommande.[N° commande]</div>
+            <div>WHERE Categorie.NomCateg = 'Boissons' OR Categorie.NomCateg = 'Desserts'</div>
+            <div>GROUP BY YEAR(DateCde), Categorie.NomCateg;</div>
+        </section>
+        <br>
+        <img src="IMG/requete3.png" alt="Capture d'écran de Access de la requête 3">
+        <br>
+        <div class="Question1">Requête 4: Dans une réflexion en lien avec l’offre commerciale : Calcul de l’indicateur nombre de
+            produits carnés non commandés actuellement ?
+        </div>
+        <section>
+            <div>SELECT COUNT(*) AS NbProduitsCarnesNonCommandes</div>
+            <div>FROM (Categorie INNER JOIN Produit ON Categorie.CodeCateg = Produit.CodeCateg)</div>
+            <div>LEFT JOIN DetailCommande ON Produit.RefProd = DetailCommande.[Réf Produit]</div>
+            <div>WHERE Categorie.NomCateg = 'Produits carnés'AND DetailCommande.[Réf Produit] IS NULL</div>
+        </section>
+        <br>
+        <img src="IMG/requete4.png" alt="Capture d'écran de Access de la requête 4">
+        <br>
+        <div class="Question1">Requête 5: Dans une réflexion sur le partenariat client : A-t-on des clients pilotes d’un réseau
+            partenaire ayant autant de commandes que les clients partenaires ?
+        </div>
+        <section>
+            <div>SELECT C.CodeCliPart, COUNT(C.CodeCli) AS Nb_Clients, COUNT(Com.[N° commande]) AS Nb_Total_Commandes</div>
+            <div>FROM Clientele AS C LEFT JOIN Commande AS Com ON C.CodeCli = Com.CodeCli</div>
+            <span>GROUP BY C.CodeCliPart;</span>
+        </section>
+        <br>
+        <img src="IMG/requete5.png" alt="Capture d'écran de Access de la requête 5">
+        
+        <br>
+        <br>
+        <br>
+        <footer>
+            <a href="index.html"style="color:white;">Retour à l'accueil</a>
+        </footer>
+    </body>
+</html>
